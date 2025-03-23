@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -77,13 +78,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : AuthPageWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : AuthPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : AuthPageWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : AuthPageWidget(),
         ),
         FFRoute(
           name: AuthPageWidget.routeName,
@@ -94,7 +95,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomePage')
+              : NavBarPage(
+                  initialPage: 'HomePage',
+                  page: HomePageWidget(),
+                ),
+        ),
+        FFRoute(
+          name: ForgotPasswordWidget.routeName,
+          path: ForgotPasswordWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: UpdatePasswordWidget.routeName,
+          path: UpdatePasswordWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => UpdatePasswordWidget(),
+        ),
+        FFRoute(
+          name: AsceseCenterWidget.routeName,
+          path: AsceseCenterWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'AsceseCenter')
+              : NavBarPage(
+                  initialPage: 'AsceseCenter',
+                  page: AsceseCenterWidget(),
+                ),
+        ),
+        FFRoute(
+          name: SettingsPageWidget.routeName,
+          path: SettingsPageWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => SettingsPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

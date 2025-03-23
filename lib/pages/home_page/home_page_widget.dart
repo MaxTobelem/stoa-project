@@ -1,4 +1,3 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -215,16 +214,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           icon: Icon(
-                            Icons.logout_sharp,
+                            Icons.settings_sharp,
                             size: 24.0,
                           ),
                           onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            await authManager.signOut();
-                            GoRouter.of(context).clearRedirectLocation();
-
-                            context.goNamedAuth(
-                                AuthPageWidget.routeName, context.mounted);
+                            context.pushNamed(
+                              SettingsPageWidget.routeName,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.rightToLeft,
+                                ),
+                              },
+                            );
                           },
                         ),
                       ),
