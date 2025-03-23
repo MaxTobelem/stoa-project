@@ -5,28 +5,29 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'forgot_password_model.dart';
-export 'forgot_password_model.dart';
+import 'forgot_password_page_model.dart';
+export 'forgot_password_page_model.dart';
 
-class ForgotPasswordWidget extends StatefulWidget {
-  const ForgotPasswordWidget({super.key});
+class ForgotPasswordPageWidget extends StatefulWidget {
+  const ForgotPasswordPageWidget({super.key});
 
-  static String routeName = 'ForgotPassword';
-  static String routePath = '/forgotPassword';
+  static String routeName = 'ForgotPasswordPage';
+  static String routePath = '/forgotPasswordPage';
 
   @override
-  State<ForgotPasswordWidget> createState() => _ForgotPasswordWidgetState();
+  State<ForgotPasswordPageWidget> createState() =>
+      _ForgotPasswordPageWidgetState();
 }
 
-class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
-  late ForgotPasswordModel _model;
+class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
+  late ForgotPasswordPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ForgotPasswordModel());
+    _model = createModel(context, () => ForgotPasswordPageModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();

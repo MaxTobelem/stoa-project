@@ -20,12 +20,16 @@ class UsersRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  String get firstName => getField<String>('first_name')!;
-  set firstName(String value) => setField<String>('first_name', value);
+  String? get firstName => getField<String>('first_name');
+  set firstName(String? value) => setField<String>('first_name', value);
 
-  String get lastName => getField<String>('last_name')!;
-  set lastName(String value) => setField<String>('last_name', value);
+  String? get lastName => getField<String>('last_name');
+  set lastName(String? value) => setField<String>('last_name', value);
 
   String get email => getField<String>('email')!;
   set email(String value) => setField<String>('email', value);
+
+  String? get profilePictureUrl => getField<String>('profile_picture_url');
+  set profilePictureUrl(String? value) =>
+      setField<String>('profile_picture_url', value);
 }

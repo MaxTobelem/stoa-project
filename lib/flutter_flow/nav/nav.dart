@@ -103,24 +103,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
         ),
         FFRoute(
-          name: ForgotPasswordWidget.routeName,
-          path: ForgotPasswordWidget.routePath,
-          builder: (context, params) => ForgotPasswordWidget(),
+          name: ForgotPasswordPageWidget.routeName,
+          path: ForgotPasswordPageWidget.routePath,
+          builder: (context, params) => ForgotPasswordPageWidget(),
         ),
         FFRoute(
-          name: UpdatePasswordWidget.routeName,
-          path: UpdatePasswordWidget.routePath,
-          builder: (context, params) => UpdatePasswordWidget(),
+          name: UpdatePasswordPageWidget.routeName,
+          path: UpdatePasswordPageWidget.routePath,
+          builder: (context, params) => UpdatePasswordPageWidget(),
         ),
         FFRoute(
-          name: AsceseCenterWidget.routeName,
-          path: AsceseCenterWidget.routePath,
+          name: MyAscesePageWidget.routeName,
+          path: MyAscesePageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'AsceseCenter')
+              ? NavBarPage(initialPage: 'MyAscesePage')
               : NavBarPage(
-                  initialPage: 'AsceseCenter',
-                  page: AsceseCenterWidget(),
+                  initialPage: 'MyAscesePage',
+                  page: MyAscesePageWidget(),
                 ),
         ),
         FFRoute(

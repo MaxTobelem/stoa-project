@@ -1,8 +1,11 @@
 // Export pages
-export '/auth_page/auth_page_widget.dart' show AuthPageWidget;
+export '/pages/auth/auth_page/auth_page_widget.dart' show AuthPageWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
-export '/update_password/update_password_widget.dart' show UpdatePasswordWidget;
-export '/pages/ascese_center/ascese_center_widget.dart' show AsceseCenterWidget;
+export '/pages/auth/forgot_password_page/forgot_password_page_widget.dart'
+    show ForgotPasswordPageWidget;
+export '/pages/auth/update_password_page/update_password_page_widget.dart'
+    show UpdatePasswordPageWidget;
+export '/pages/ascese/my_ascese_page/my_ascese_page_widget.dart'
+    show MyAscesePageWidget;
 export '/pages/settings/settings_page/settings_page_widget.dart'
     show SettingsPageWidget;

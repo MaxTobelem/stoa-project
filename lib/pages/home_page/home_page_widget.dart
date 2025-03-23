@@ -1,8 +1,10 @@
+import '/components/change_photo_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
@@ -164,47 +166,86 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       child: Padding(
                         padding: EdgeInsets.all(2.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(40.0),
-                          child: Image.network(
-                            'https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-                            width: 40.0,
-                            height: 40.0,
-                            fit: BoxFit.cover,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    FocusScope.of(context).unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  },
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: ChangePhotoWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(40.0),
+                            child: Image.network(
+                              FFAppState().profilePicturePath,
+                              width: 48.0,
+                              height: 48.0,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '${FFAppState().FirstName} ${FFAppState().LastName}',
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Urbanist',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 4.0, 0.0, 0.0),
-                            child: Text(
-                              'Bon retour parmis nous ${FFAppState().FirstName}!',
+                    Container(
+                      width: 260.0,
+                      height: 80.0,
+                      decoration: BoxDecoration(),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              '${FFAppState().firstName} ${FFAppState().lastName}'
+                                  .maybeHandleOverflow(
+                                maxChars: 50,
+                              ),
+                              textAlign: TextAlign.start,
+                              minFontSize: 15.0,
                               style: FlutterFlowTheme.of(context)
-                                  .labelMedium
+                                  .titleLarge
                                   .override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 4.0, 0.0, 0.0),
+                              child: Text(
+                                'Bon retour parmis nous ${FFAppState().firstName}!',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Expanded(

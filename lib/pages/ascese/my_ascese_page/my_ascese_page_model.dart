@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'ascese_center_widget.dart' show AsceseCenterWidget;
+import 'my_ascese_page_widget.dart' show MyAscesePageWidget;
 import 'package:flutter/material.dart';
 
-class AsceseCenterModel extends FlutterFlowModel<AsceseCenterWidget> {
+class MyAscesePageModel extends FlutterFlowModel<MyAscesePageWidget> {
   @override
   void initState(BuildContext context) {}
 

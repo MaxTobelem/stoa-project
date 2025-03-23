@@ -980,12 +980,12 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                         );
                                                         if (loggedIn) {
                                                           FFAppState()
-                                                                  .FirstName =
+                                                                  .firstName =
                                                               _model
                                                                   .firstNameCreateTextController
                                                                   .text;
                                                           FFAppState()
-                                                                  .LastName =
+                                                                  .lastName =
                                                               _model
                                                                   .lastNameCreateTextController
                                                                   .text;
@@ -1402,16 +1402,22 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                             currentUserUid,
                                                           ),
                                                         );
-                                                        FFAppState().FirstName =
+                                                        FFAppState().firstName =
                                                             _model
                                                                 .connectedUserInfos!
                                                                 .firstOrNull!
-                                                                .firstName;
-                                                        FFAppState().LastName =
+                                                                .firstName!;
+                                                        FFAppState().lastName =
                                                             _model
                                                                 .connectedUserInfos!
                                                                 .firstOrNull!
-                                                                .lastName;
+                                                                .lastName!;
+                                                        FFAppState()
+                                                                .profilePicturePath =
+                                                            _model
+                                                                .connectedUserInfos!
+                                                                .firstOrNull!
+                                                                .profilePictureUrl!;
                                                         safeSetState(() {});
 
                                                         context.goNamedAuth(
@@ -1480,7 +1486,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         context.pushNamed(
-                                                            ForgotPasswordWidget
+                                                            ForgotPasswordPageWidget
                                                                 .routeName);
                                                       },
                                                       text:

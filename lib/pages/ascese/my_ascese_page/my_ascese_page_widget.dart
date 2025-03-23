@@ -2,28 +2,28 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'ascese_center_model.dart';
-export 'ascese_center_model.dart';
+import 'my_ascese_page_model.dart';
+export 'my_ascese_page_model.dart';
 
-class AsceseCenterWidget extends StatefulWidget {
-  const AsceseCenterWidget({super.key});
+class MyAscesePageWidget extends StatefulWidget {
+  const MyAscesePageWidget({super.key});
 
-  static String routeName = 'AsceseCenter';
-  static String routePath = '/asceseCenter';
+  static String routeName = 'MyAscesePage';
+  static String routePath = '/myAscesePage';
 
   @override
-  State<AsceseCenterWidget> createState() => _AsceseCenterWidgetState();
+  State<MyAscesePageWidget> createState() => _MyAscesePageWidgetState();
 }
 
-class _AsceseCenterWidgetState extends State<AsceseCenterWidget> {
-  late AsceseCenterModel _model;
+class _MyAscesePageWidgetState extends State<MyAscesePageWidget> {
+  late MyAscesePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AsceseCenterModel());
+    _model = createModel(context, () => MyAscesePageModel());
   }
 
   @override
@@ -47,7 +47,7 @@ class _AsceseCenterWidgetState extends State<AsceseCenterWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Order Now',
+            'Mon Ascèse',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Urbanist',
                   letterSpacing: 0.0,
@@ -323,124 +323,6 @@ class _AsceseCenterWidgetState extends State<AsceseCenterWidget> {
                                   borderRadius: BorderRadius.circular(4.0),
                                   child: Image.network(
                                     'https://images.unsplash.com/photo-1620167790054-de54f34308bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHx0dXJraXNoJTIwZm9vZHxlbnwwfHx8fDE3MDY2MjIxMzF8MA&ixlib=rb-4.0.3&q=80&w=400',
-                                    width: double.infinity,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            RichText(
-                                              textScaler: MediaQuery.of(context)
-                                                  .textScaler,
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text: 'Falafal Place',
-                                                    style: TextStyle(),
-                                                  ),
-                                                  TextSpan(
-                                                    text: ' || ',
-                                                    style: TextStyle(),
-                                                  ),
-                                                  TextSpan(
-                                                    text: '0.4 mi',
-                                                    style: TextStyle(),
-                                                  )
-                                                ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                            Text(
-                                              'Master P\'s Falafal',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ].divide(SizedBox(height: 4.0)),
-                                        ),
-                                      ),
-                                      RichText(
-                                        textScaler:
-                                            MediaQuery.of(context).textScaler,
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: 'Rating:',
-                                              style: TextStyle(),
-                                            ),
-                                            TextSpan(
-                                              text: ' 4.5',
-                                              style: TextStyle(),
-                                            )
-                                          ],
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelSmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 8.0)),
-                                  ),
-                                ),
-                              ].divide(SizedBox(height: 8.0)),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          constraints: BoxConstraints(
-                            maxWidth: 800.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 1.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1516774818621-7d41943dd5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMXx8dHVya2lzaCUyMGZvb2R8ZW58MHx8fHwxNzA2NjIyMTMxfDA&ixlib=rb-4.0.3&q=80&w=400',
                                     width: double.infinity,
                                     height: 200.0,
                                     fit: BoxFit.cover,

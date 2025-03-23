@@ -5,28 +5,29 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'update_password_model.dart';
-export 'update_password_model.dart';
+import 'update_password_page_model.dart';
+export 'update_password_page_model.dart';
 
-class UpdatePasswordWidget extends StatefulWidget {
-  const UpdatePasswordWidget({super.key});
+class UpdatePasswordPageWidget extends StatefulWidget {
+  const UpdatePasswordPageWidget({super.key});
 
-  static String routeName = 'UpdatePassword';
-  static String routePath = '/updatePassword';
+  static String routeName = 'UpdatePasswordPage';
+  static String routePath = '/updatePasswordPage';
 
   @override
-  State<UpdatePasswordWidget> createState() => _UpdatePasswordWidgetState();
+  State<UpdatePasswordPageWidget> createState() =>
+      _UpdatePasswordPageWidgetState();
 }
 
-class _UpdatePasswordWidgetState extends State<UpdatePasswordWidget> {
-  late UpdatePasswordModel _model;
+class _UpdatePasswordPageWidgetState extends State<UpdatePasswordPageWidget> {
+  late UpdatePasswordPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UpdatePasswordModel());
+    _model = createModel(context, () => UpdatePasswordPageModel());
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();

@@ -147,7 +147,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': HomePageWidget(),
-      'AsceseCenter': AsceseCenterWidget(),
+      'MyAscesePage': MyAscesePageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
