@@ -321,7 +321,7 @@ class _UpdatePasswordWidgetState extends State<UpdatePasswordWidget> {
                       context.pushNamedAuth(
                           AuthPageWidget.routeName, context.mounted);
                     },
-                    text: 'Mettre à jour son mot de passe',
+                    text: 'Mettre à jour mon mot de passe',
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 50.0,

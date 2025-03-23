@@ -27,7 +27,8 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message}')),
+        SnackBar(
+            content: Text('Erreur: [error]'.replaceAll('[error]', e.message))),
       );
     }
   }
@@ -46,12 +47,15 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message}')),
+        SnackBar(
+            content: Text('Erreur: [error]'.replaceAll('[error]', e.message))),
       );
       return;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Email change confirmation email sent')),
+      SnackBar(
+          content: Text(
+              'Mail de réinitialisation envoyé à votre nouvelle adresse!')),
     );
   }
 
@@ -69,12 +73,15 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message}')),
+        SnackBar(
+            content: Text('Erreur: [error]'.replaceAll('[error]', e.message))),
       );
       return;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Password updated successfully')),
+      SnackBar(
+          content: Text(
+              'Mail de réinitialisation envoyé à votre nouvelle adresse!')),
     );
   }
 
@@ -90,12 +97,14 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: ${e.message}')),
+        SnackBar(
+            content: Text('Erreur: [error]'.replaceAll('[error]', e.message))),
       );
       return null;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Password reset email sent')),
+      SnackBar(
+          content: Text('Mail de réinitialisation de mot de passe envoyé!')),
     );
   }
 
@@ -142,8 +151,8 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
       return authUser;
     } on AuthException catch (e) {
       final errorMsg = e.message.contains('User already registered')
-          ? 'Error: The email is already in use by a different account'
-          : 'Error: ${e.message}';
+          ? 'Cet adresse mail est déjà reliée à un compte existant'
+          : 'Erreur: [error]'.replaceAll('[error]', e.message);
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMsg)),

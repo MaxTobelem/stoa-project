@@ -939,7 +939,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                               .showSnackBar(
                                                             SnackBar(
                                                               content: Text(
-                                                                'Passwords don\'t match!',
+                                                                'Ces deux mots de passes sont différents',
                                                               ),
                                                             ),
                                                           );

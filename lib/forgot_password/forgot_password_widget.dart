@@ -220,7 +220,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
-                              'Email required!',
+                              'Mail requis',
                             ),
                           ),
                         );
@@ -233,7 +233,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
 
                       context.pushNamed(AuthPageWidget.routeName);
                     },
-                    text: 'Send Link',
+                    text: 'Réinitialiser mon mot de passe',
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 50.0,

@@ -105,13 +105,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: ForgotPasswordWidget.routeName,
           path: ForgotPasswordWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => ForgotPasswordWidget(),
         ),
         FFRoute(
           name: UpdatePasswordWidget.routeName,
           path: UpdatePasswordWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => UpdatePasswordWidget(),
         ),
         FFRoute(
